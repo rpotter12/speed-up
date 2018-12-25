@@ -1,5 +1,5 @@
 # speed-up
-A python game to check your typing speed. This game uses [unicurses library](https://pypi.org/project/UniCurses/). UniCurses is a wrapper for Python 2.x/3.x that provides a unified set of Curses functions on all platforms (MS Windows, Linux, and Mac OS X) with syntax close to that of the original NCurses. To provide the Curses functionality on Microsoft Windows systems it wraps PDCurses. 
+A python game to check your typing speed. This game uses [curses library](https://docs.python.org/3/howto/curses.html). The curses library supplies a terminal-independent screen-painting and keyboard-handling facility for text-based terminals; such terminals include VT100s, the Linux console, and the simulated terminal provided by various programs. Display terminals support various control codes to perform common operations such as moving the cursor, scrolling the screen, and erasing areas. Different terminals use widely differing codes, and often have their own minor quirks. 
 
 ## Game Description
 - every second new words will flow from left side of your screen to right side of your screen.
