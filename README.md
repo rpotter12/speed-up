@@ -12,6 +12,11 @@ A python game to check your typing speed. This game uses [curses library](https:
 - you have to type the words which are on the screen before it gets disappear
 - after 10 miss your game will be over
 
+## How to run the game
+- `git clone https://github.com/rpotter12/speed-up`
+- `cd speed-up`
+- `python3 speedup.py`
+
 ## Contributing
 
 - Want to contribute to [speed-up](https://github.com/rpotter12/speed-up)?

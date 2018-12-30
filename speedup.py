@@ -1,23 +1,29 @@
 from curses import *
+import curses
 
 # function for main menu of the game
-def mainmenu(stdscr):
+def mainmenu(stdscr, y, x):
 	stdscr.clear()
-	stdscr.addstr("1. Play \n")
-	stdscr.addstr("2. Rules \n")
-	stdscr.addstr("3. Quit \n")
-	stdscr.addstr("enter choice : \n")
+	stdscr.addstr("1. Play \n", curses.color_pair(4))
+	stdscr.addstr("2. Rules \n", curses.color_pair(4))
+	stdscr.addstr("3. Quit \n", curses.color_pair(4))
+	stdscr.addstr("enter choice : \n", curses.color_pair(4))
 	input = stdscr.getch()
-	if input == 49:
+	stdscr.getch()
+	# curses uses ASCII value in integer input
+	if input == 49:   
 		pname(stdscr)
-	elif input == 50:  # curses uses ASCII value in integer input
+	elif input == 50:  
 		rules(stdscr)
 	elif input == 51:
-		exit()
+		curses.nocbreak()
+		stdscr.keypad(False)
+		curses.echo()
+		curses.endwin()
 	stdscr.getch()
 
 # function for description and rules
-def rules(stdscr):
+def rules(stdscr, y, x):
 	stdscr.clear()
 	stdscr.addstr("---------------------\n")
 	stdscr.addstr("|    Description    |\n")
@@ -36,20 +42,27 @@ def rules(stdscr):
 	stdscr.getch()
 	mainmenu(stdscr)
 
-def pname(stdscr):
+def pname(stdscr, y, x):
 	stdscr.clear()
-	stdscr.addstr("Enter your name: ")
+	curses.echo()
+	global player
+	stdscr.addstr("Enter your name: \n", curses.color_pair(4))
+	player = stdscr.getstr(1, 0, 15)
+	play(stdscr, player)
 	stdscr.getch()
 
-#def play():
-
+def play(stdscr, player, y, x):
+	stdscr.clear()
+	stdscr.addstr("abc")
+	stdscr.getch()
 
 def main():
 	global stdscr
 	stdscr = initscr()
-	mainmenu(stdscr)
-	getch()
-	endwin()
+	y, x = stdscr.getmaxyx()
+	mainmenu(stdscr, y, x)
+	stdscr.getch()
+	stdscr.endwin()
 	return 0;
 
 if __name__ == '__main__':
