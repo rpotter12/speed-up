@@ -4,10 +4,10 @@ import curses
 # function for main menu of the game
 def mainmenu(stdscr, y, x):
 	stdscr.clear()
-	stdscr.addstr("1. Play \n", curses.color_pair(4))
-	stdscr.addstr("2. Rules \n", curses.color_pair(4))
-	stdscr.addstr("3. Quit \n", curses.color_pair(4))
-	stdscr.addstr("enter choice : \n", curses.color_pair(4))
+	stdscr.addstr("1. Play \n")
+	stdscr.addstr("2. Rules \n")
+	stdscr.addstr("3. Quit \n")
+	stdscr.addstr("enter choice : \n")
 	input = stdscr.getch()
 	stdscr.getch()
 	# curses uses ASCII value in integer input
@@ -46,7 +46,7 @@ def pname(stdscr, y, x):
 	stdscr.clear()
 	curses.echo()
 	global player
-	stdscr.addstr("Enter your name: \n", curses.color_pair(4))
+	stdscr.addstr("Enter your name: \n")
 	player = stdscr.getstr(1, 0, 15)
 	play(stdscr, player)
 	stdscr.getch()
