@@ -2,7 +2,7 @@ from curses import *
 import curses
 
 # function for main menu of the game
-def mainmenu(stdscr, y, x):
+def mainmenu(stdscr):
 	stdscr.clear()
 	stdscr.addstr("1. Play \n")
 	stdscr.addstr("2. Rules \n")
@@ -12,7 +12,7 @@ def mainmenu(stdscr, y, x):
 	stdscr.getch()
 	# curses uses ASCII value in integer input
 	if input == 49:   
-		pname(stdscr)
+		play(stdscr)
 	elif input == 50:  
 		rules(stdscr)
 	elif input == 51:
@@ -23,7 +23,7 @@ def mainmenu(stdscr, y, x):
 	stdscr.getch()
 
 # function for description and rules
-def rules(stdscr, y, x):
+def rules(stdscr):
 	stdscr.clear()
 	stdscr.addstr("---------------------\n")
 	stdscr.addstr("|    Description    |\n")
@@ -42,7 +42,7 @@ def rules(stdscr, y, x):
 	stdscr.getch()
 	mainmenu(stdscr)
 
-def pname(stdscr, y, x):
+def pname(stdscr):
 	stdscr.clear()
 	curses.echo()
 	global player
@@ -51,16 +51,24 @@ def pname(stdscr, y, x):
 	play(stdscr, player)
 	stdscr.getch()
 
-def play(stdscr, player, y, x):
+words=["start","totoro","vegeta","yagami","get","not","amazing","people","interesting","gross","ended"]
+
+def play(stdscr):
 	stdscr.clear()
-	stdscr.addstr("abc")
+	stdscr.start_color()
+	x=0
+	i=0
+	while 1:
+		stdscr.addstr(0,x,words[i],curses.color_pair(1))
+		x=x+1
 	stdscr.getch()
 
+# y=24, x=80
 def main():
 	global stdscr
 	stdscr = initscr()
 	y, x = stdscr.getmaxyx()
-	mainmenu(stdscr, y, x)
+	mainmenu(stdscr)
 	stdscr.getch()
 	stdscr.endwin()
 	return 0;
