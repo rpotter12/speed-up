@@ -51,17 +51,19 @@ def pname(stdscr):
 	play(stdscr, player)
 	stdscr.getch()
 
-words=["start","totoro","vegeta","yagami","get","not","amazing","people","interesting","gross","ended"]
+
 
 def play(stdscr):
 	stdscr.clear()
-	stdscr.start_color()
 	x=0
-	i=0
+	words=["start","totoro","vegeta","yagami","get","not","amazing","people","interesting","gross","ended","read","accelerate",
+		"speed","excellent","negligible","expected","anything","walk","talk","angel","beautiful","haunted","horror","acting",
+		"ignore","appearance","dominating","together","forever","yelled","hot","hustle","lime","ladyfinger","mango","height",
+		"body","excess","soft","broken","broad","vulture","gaming","software","lovely","life","actually","emit","express",
+		"feeling","famous","catch","capable","silent","helpful","caring","knowledgable","afraid","eligible","entity"]
 	while 1:
-		stdscr.addstr(0,x,words[i],curses.color_pair(1))
-		x=x+1
-	stdscr.getch()
+		stdscr.addstr("abc\n")
+		stdscr.getch()
 
 # y=24, x=80
 def main():
