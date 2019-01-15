@@ -4,9 +4,15 @@ import curses
 # function for main menu of the game
 def mainmenu(stdscr):
 	stdscr.clear()
-	stdscr.addstr("1. Play \n")
-	stdscr.addstr("2. Rules \n")
-	stdscr.addstr("3. Quit \n")
+	stdscr.addstr("---------------------\n")
+	stdscr.addstr("|     1. Play       |\n")
+	stdscr.addstr("---------------------\n")
+	stdscr.addstr("---------------------\n")
+	stdscr.addstr("|     2. Rules      |\n")
+	stdscr.addstr("---------------------\n")
+	stdscr.addstr("---------------------\n")
+	stdscr.addstr("|     3. Quit       |\n")
+	stdscr.addstr("---------------------\n")
 	stdscr.addstr("enter choice : \n")
 	input = stdscr.getch()
 	stdscr.getch()
