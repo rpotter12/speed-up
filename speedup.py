@@ -1,5 +1,6 @@
 from curses import *
 import curses
+import sys,os
 
 # function for main menu of the game
 def mainmenu(stdscr):
@@ -68,8 +69,11 @@ def play(stdscr):
 		"body","excess","soft","broken","broad","vulture","gaming","software","lovely","life","actually","emit","express",
 		"feeling","famous","catch","capable","silent","helpful","caring","knowledgable","afraid","eligible","entity"]
 	while 1:
-		stdscr.addstr("abc\n")
+		stdscr.addstr(1, 0, words[x])
+		x=x+1
 		stdscr.getch()
+		stdscr.clear()
+	
 
 # y=24, x=80
 def main():
