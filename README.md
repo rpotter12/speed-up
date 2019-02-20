@@ -1,21 +1,16 @@
 # speed-up
-A python game to check your typing speed. This game uses [curses library](https://docs.python.org/3/howto/curses.html). The curses library supplies a terminal-independent screen-painting and keyboard-handling facility for text-based terminals; such terminals include VT100s, the Linux console, and the simulated terminal provided by various programs. Display terminals support various control codes to perform common operations such as moving the cursor, scrolling the screen, and erasing areas. Different terminals use widely differing codes, and often have their own minor quirks. 
+A python game to check your typing speed.
 
 ## Game Description
-- every second new words will flow from left side of your screen to right side of your screen.
-- every word will stay on screen for 20 seconds.
-- the word will disappear after you have written it.
-- this game will tell you the total time taken, words per minute.
-- if the word flows from left to right completely and you have not written that word then miss will increase with +1. 
+- 60 seconds game
+- get new word after pressing `enter`
+- shows words per minute after 60 seconds.
 
-## Rules
-- you have to type the words which are on the screen before it gets disappear
-- after 10 miss your game will be over
 
 ## How to run the game
 - `git clone https://github.com/rpotter12/speed-up`
 - `cd speed-up`
-- `python3 speedup.py`
+- `python3 test.py`
 
 ## Contributing
 
