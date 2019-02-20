@@ -1,6 +1,7 @@
 from curses import *
 import curses
 import sys,os
+import time
 
 # function for main menu of the game
 def mainmenu(stdscr):
@@ -64,7 +65,6 @@ def play(stdscr):
 	stdscr.clear()
 	x=0
 	place=0
-	wordz=["word: "]
 	words=["start","totoro","vegeta","yagami","get","not","amazing","people","interesting","gross","ended","read","accelerate",
 		"speed","excellent","negligible","expected","anything","walk","talk","angel","beautiful","haunted","horror","acting",
 		"ignore","appearance","dominating","together","forever","yelled","hot","hustle","lime","ladyfinger","mango","height",
@@ -73,13 +73,14 @@ def play(stdscr):
 	while 1:
 		stdscr.addstr(1, place, words[x])
 		#x=x+1
-		place=place+1
+		place=place+2
 		curses.echo()
 		global wordin
-		stdscr.addstr(23, 0, "wordz: ")
-		wordin = stdscr.getstr(24, 0, 15)
-		stdscr.getch()
-		if place == 80:
+		stdscr.addstr(22, 0, "word: ")
+		wordin = stdscr.getstr(23, 0, 15)
+		#stdscr.getch()
+		time.sleep(1)
+		if place == 80 | wordin in words:
 			x=x+1
 			place=0
 		stdscr.clear()
